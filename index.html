@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Mulani | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e25;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: rgba(17, 17, 50, 0.95);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px #00e0ff55;
+    }
+
+    nav h1 {
+      color: #00e0ff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li:hover {
+      color: #00e0ff;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 120px 60px 60px;
+    }
+
+    #hero {
+      background: radial-gradient(circle at top left, #00e0ff15, transparent), #0e0e25;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    #hero h1 {
+      font-size: 4rem;
+      color: #00e0ff;
+      text-shadow: 0 0 10px #00e0ff;
+    }
+
+    #hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 25px #00e0ff55;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #00e0ff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #00e0ff;
+    }
+
+    .project-card {
+      background: rgba(31, 31, 88, 0.4);
+      border: 1px solid #00e0ff33;
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 25px #00e0ff66;
+    }
+
+    .skills-section, .certifications-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 20px;
+    }
+
+    .skill-badge, .cert-badge {
+      background: #00e0ff11;
+      border: 1px solid #00e0ff66;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #00e0ff;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-badge:hover, .cert-badge:hover {
+      transform: scale(1.1);
+      background-color: #00e0ff33;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111132;
+    }
+
+    a {
+      color: #00e0ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1 onclick="location.reload()">Yash Mulani</h1>
+    <ul>
+      <li onclick="scrollToSection('hero')">Home</li>
+      <li onclick="scrollToSection('about')">About</li>
+      <li onclick="scrollToSection('projects')">Projects</li>
+      <li onclick="scrollToSection('skills')">Skills</li>
+      <li onclick="scrollToSection('certifications')">Certifications</li>
+      <li onclick="scrollToSection('contact')">Contact</li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <img src="Yash Profile.jpg" alt="Profile" class="profile-img">
+    <h2>Hello, I'm</h2>
+    <h1 id="typing-text"></h1>
+    <p>A fresher with internship experience in full-stack and web development. I am eager to contribute, learn, and grow in the tech field by building impactful and modern applications.</p>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>I am completing my graduation in 2025 in B.Tech Computer Science from Shri Vaishnav Vidyapeeth Vishwavidyalaya, Indore. I am also the President of the Red Cross Society at SVVV. I’ve worked as a Full Stack Java Intern at Technosoft Informatics and as a Web Developer Intern at NullClass Pvt. Ltd. I’m passionate about tech, love solving problems, and always ready to learn and adapt to new challenges.</p>
+    <p>📄 <a href="Resume.pdf" download>Download My Resume</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/yash-mulani26" target="_blank">LinkedIn Profile</a></p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-card">
+      <h3>True Democracy</h3>
+      <p>Secure online voting system built with HTML, CSS, JSP, Servlet, and MySQL. Includes role-based access, session tracking, and authentication for election transparency.</p>
+    </div>
+    <div class="project-card">
+      <h3>Project-Connect</h3>
+      <p>Web-based project management system developed using Java, JS, MySQL. Includes project upload, admin panel, and newsletter integration.</p>
+    </div>
+    <div class="project-card">
+      <h3>Budget Tracker CLI App</h3>
+      <p>Console-based Python CLI app for managing income and expenses. Features: add/view/filter transactions, summary report, stored in transactions.txt. Built for Valutics AI Round 2. Files: <code>main.py</code>, <code>budget.py</code>, <code>transaction_class.py</code>.</p>
+    </div>
+    <div class="project-card">
+      <h3>Tatva Chintan</h3>
+      <p>Python-Django platform for tech discussions. Includes user authentication, content moderation, and admin dashboard.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-section">
+      <div class="skill-badge">Java</div>
+      <div class="skill-badge">JDBC</div>
+      <div class="skill-badge">Python</div>
+      <div class="skill-badge">Django</div>
+      <div class="skill-badge">HTML</div>
+      <div class="skill-badge">CSS</div>
+      <div class="skill-badge">JavaScript</div>
+      <div class="skill-badge">PHP</div>
+      <div class="skill-badge">WordPress</div>
+      <div class="skill-badge">SQL</div>
+      <div class="skill-badge">PostgreSQL</div>
+      <div class="skill-badge">Hibernate</div>
+      <div class="skill-badge">Spring</div>
+      <div class="skill-badge">Event Organizing</div>
+      <div class="skill-badge">Promotion</div>
+      <div class="skill-badge">Sponsorship</div>
+      <div class="skill-badge">Finance Handling</div>
+      <div class="skill-badge">Communication</div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certifications-section">
+      <div class="cert-badge">Anveshan 2023 - Coordinator & Anchor</div>
+      <div class="cert-badge">Anveshan 2024 - Coordinator & Anchor</div>
+      <div class="cert-badge">Spandan 2023 - Sub-Event Organizer</div>
+      <div class="cert-badge">Spandan 2024 - Sub-Event Organizer</div>
+      <div class="cert-badge">Hack'N'Dore 2024 - Top 80 Finalist</div>
+      <div class="cert-badge">Data Analytics - Anudeep Foundation</div>
+      <div class="cert-badge">Python with Django - Technosoft Informatics</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Let's Connect</h2>
+    <p>📧 Email: <a href="mailto:yashmulani2611@gmail.com">yashmulani2611@gmail.com</a></p>
+    <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/yash-mulani26" target="_blank">linkedin.com/in/yash-mulani26</a></p>
+    <p>👨‍💻 GitHub: <a href="https://github.com/YashMulani-2603" target="_blank">github.com/YashMulani-2603</a></p>
+    <p>📱 WhatsApp: +91-8770244126</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Yash Mulani | All rights reserved.
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const text = "Yash Mulani";
+    const typingElement = document.getElementById("typing-text");
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        typingElement.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 150);
+      }
+    }
+    typeWriter();
+
+    gsap.from("#hero h2", {opacity: 0, x: -100, duration: 1});
+    gsap.from("#hero h1", {opacity: 0, x: 100, duration: 1.2});
+    gsap.from("#hero p", {opacity: 0, y: 50, duration: 1.5});
+  </script>
+
+</body>
+</html>
